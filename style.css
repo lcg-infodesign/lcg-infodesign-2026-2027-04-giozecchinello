@@ -1,8 +1,85 @@
 html, body {
   margin: 0;
   padding: 0;
+  overflow: hidden;
+  background-color: #101014;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #fff;
 }
 
 canvas {
   display: block;
+}
+
+/* Tooltip al rollover */
+.tooltip {
+  position: absolute;
+  display: none;
+  background: rgba(20, 20, 26, 0.95);
+  border: 1px solid #ff7a45;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  max-width: 240px;
+  overflow-wrap: anywhere;
+}
+
+/* Card dettagli al click, in alto a destra.
+   position: fixed la ancora alla finestra, quindi non può scorrere fuori. */
+.info-card {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: min(280px, calc(100vw - 60px));
+  max-height: calc(100vh - 60px);
+  overflow: auto;
+  box-sizing: border-box;
+  background: #181820;
+  border: 1px solid #2e2e3a;
+  border-radius: 8px;
+  padding: 20px 44px 20px 20px;   /* spazio a destra per il pulsante × */
+  display: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+  z-index: 20;
+  overflow-wrap: anywhere;        /* spezza anche le parole molto lunghe */
+}
+
+.info-card h2 {
+  position: relative;
+  top: 30px;
+  right: 30px;
+  font-size: 18px;
+  line-height: 1.3;
+  color: #ff7a45;
+  overflow-wrap: anywhere;
+}
+
+.info-card p {
+  position: relative;
+  top: 70px;
+  right: 30px;
+  margin: 8px 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #d0d0dc;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+#close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+#close-btn:hover { color: #fff; 
 }

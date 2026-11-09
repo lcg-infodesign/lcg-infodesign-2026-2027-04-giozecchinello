@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Sketch</title>
-
+    <title>Carestie - Glifi Circolari</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-
     <script src="libraries/p5.min.js"></script>
-    <script src="libraries/p5.sound.min.js"></script>
   </head>
-
   <body>
+    <div id="tooltip" class="tooltip"></div>
+
+    <div id="info-card" class="info-card">
+      <button id="close-btn" onclick="document.getElementById('info-card').style.display='none'">&times;</button>
+      <h2 id="card-country">Paese</h2>
+      <p>Mortalità: <span id="card-mortality">-</span></p>
+      <p>Durata: <span id="card-duration">-</span> anni</p>
+    </div>
+
     <script src="sketch.js"></script>
   </body>
 </html>
